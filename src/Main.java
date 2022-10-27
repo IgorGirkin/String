@@ -1,25 +1,38 @@
+
 public class Main {
     public static void main(String[] args) {
-        String phon = "+7918-0 7 0-7 2-5 9";
-        phon = phon.replace("-","");
-        phon = phon.replace(" ","");
-        phon = phon.replace("+","");
-        if (phon.length()==10) {
-          phon = "7" + phon;
-        } else if (phon.length() > 11) {
-            throw new RuntimeException("Ahtung телефон слишком длинный");
-        } else if (phon.length() < 10) {
-            throw new RuntimeException("Ahtung телефон слишком короткий");
-        } else if (phon.length() == 11 && phon.charAt(0) !='7') {
-            throw new RuntimeException("Среди нас посторонний");
+        //Задание 1
+        System.out.println("Задание 1");
+        String firstName = "Ivan";
+        firstName += " ";
+        String middleName = "Ivanovich";
+        String lastName = "Ivanov";
+        middleName += " ";
+        lastName += " ";
+        String fullName = lastName + firstName + middleName;
+        System.out.println("ФИО сотрудника — " + fullName + ".");
+       //Задание 2
+        System.out.println("Задание 2");
+        System.out.println("Данные ФИО сотрудника для заполнения отчета — "+fullName.toUpperCase());
+        //Задание 3
+        System.out.println("Задание 3");
+        //Решение 1
+        var fullNameIvan = fullName.split(" ");
+        fullNameIvan[0]="Иванов";
+        fullNameIvan[1]="Семён";
+        fullNameIvan[2]="Семёнович";
+        for (int i = 0; i <fullNameIvan.length; i++) {
+            if (fullNameIvan[i].contains("ё")) {
+           fullNameIvan[i]=fullNameIvan[i].replace("ё","е");}
+            System.out.print(fullNameIvan[i]);
+            if (i<fullNameIvan.length-1) {
+                System.out.print(" ");
+            }
+        }
 
-        }
-        System.out.println("phon = " + phon);
-        String expectedPhon = "79180707259";
-        if (phon.equals(expectedPhon)) {
-            System.out.println("Успех");
-        } else {
-            System.out.println("Неудача");
-        }
+  //      // Решение 2
+  //       String fullName2 ="Иванов Семён Семёнович";
+  //      fullName2= fullName2.replace("ё","е");
+  //      System.out.println("Данные ФИО сотрудника — "+fullName2);
     }
 }
