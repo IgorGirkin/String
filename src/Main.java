@@ -21,6 +21,7 @@ public class Main {
         fullNameIvan[0]="Иванов";
         fullNameIvan[1]="Семён";
         fullNameIvan[2]="Семёнович";
+        System.out.print("Данные ФИО сотрудника — ");
         for (int i = 0; i <fullNameIvan.length; i++) {
             if (fullNameIvan[i].contains("ё")) {
            fullNameIvan[i]=fullNameIvan[i].replace("ё","е");}
@@ -29,7 +30,7 @@ public class Main {
                 System.out.print(" ");
             }
         }
-
+       System.out.println(".");
   //      // Решение 2
   //       String fullName2 ="Иванов Семён Семёнович";
   //      fullName2= fullName2.replace("ё","е");
